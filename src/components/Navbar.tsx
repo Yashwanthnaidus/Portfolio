@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
+import { Link, useLocation } from "react-router-dom";
+
+const navItems = [
+  { label: "Work", path: "/work" },
+  { label: "About", path: "/about" },
+  { label: "Contact", path: "/contact" },
+];
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -10,20 +19,22 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 section-padding py-6 flex justify-between items-center mix-blend-difference"
     >
       <MagneticButton>
-        <span className="font-display text-lg font-bold text-foreground cursor-none">
+        <Link to="/" className="font-display text-lg font-bold text-foreground cursor-none">
           FOLIO<span className="text-primary">.</span>
-        </span>
+        </Link>
       </MagneticButton>
 
       <div className="hidden md:flex items-center gap-10">
-        {["Work", "About", "Contact"].map((item) => (
-          <MagneticButton key={item}>
-            <a
-              href={`#${item.toLowerCase()}`}
-              className="font-body text-sm tracking-wider uppercase text-foreground hover:text-primary transition-colors duration-300 cursor-none"
+        {navItems.map((item) => (
+          <MagneticButton key={item.label}>
+            <Link
+              to={item.path}
+              className={`font-body text-sm tracking-wider uppercase transition-colors duration-300 cursor-none ${
+                location.pathname === item.path ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           </MagneticButton>
         ))}
       </div>
