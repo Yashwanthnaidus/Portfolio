@@ -39,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
             className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold leading-[0.9] tracking-tight"
           >
-            CREATIVE
+          CREATIVE
           </motion.h1>
         </div>
 
