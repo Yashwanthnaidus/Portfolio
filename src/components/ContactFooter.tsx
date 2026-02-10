@@ -35,7 +35,7 @@ const ContactFooter = () => {
           viewport={{ once: true }}
           className="mt-20 md:mt-32 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted-foreground border-t border-border pt-8"
         >
-          <p className="font-body">© 2025 — All Rights Reserved</p>
+          <p className="font-body">© 2026 — All Rights Reserved</p>
           <div className="flex gap-8">
             {["Twitter", "GitHub", "LinkedIn", "Dribbble"].map((link) => (
               <MagneticButton key={link}>
