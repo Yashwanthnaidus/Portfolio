@@ -15,14 +15,14 @@ const HeroSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.9]);
 
   return (
-    <section ref={ref} className="relative h-screen flex flex-col justify-center section-padding overflow-hidden">
+    <section ref={ref} className="relative h-screen flex flex-col justify-center section-padding overflow-x-clip overflow-y-visible">
       {/* Glow background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "var(--gradient-glow)" }}
       />
 
-      <motion.div style={{ y, opacity, scale }} className="relative z-10 max-w-7xl mx-auto w-full">
+      <motion.div style={{ y, opacity, scale }} className="relative z-10 w-full text-center">
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,9 +37,9 @@ const HeroSection = () => {
             initial={{ y: 120 }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
-            className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold leading-[0.9] tracking-tight"
+            className="font-display text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.85] tracking-tighter"
           >
-          CREATIVE
+            CREATIVE
           </motion.h1>
         </div>
 
@@ -48,7 +48,7 @@ const HeroSection = () => {
             initial={{ y: 120 }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.45 }}
-            className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold leading-[0.9] tracking-tight text-stroke"
+            className="font-display text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
           >
             DESIGNER
           </motion.h1>
@@ -58,9 +58,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-10 md:mt-16 flex items-center gap-8"
+          className="mt-10 md:mt-16 flex justify-center"
         >
-          <p className="text-muted-foreground max-w-xs text-sm md:text-base leading-relaxed">
+          <p className="text-muted-foreground max-w-xs text-sm md:text-base leading-relaxed text-center">
             Crafting immersive digital experiences through code, design, and motion.
           </p>
         </motion.div>
