@@ -48,7 +48,7 @@ const HeroSection = () => {
             initial={{ y: 120 }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.45 }}
-            className="font-display text-[18vw] md:text-[16vw] lg:text-[14vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
+            className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
           >
             DESIGNER
           </motion.h1>

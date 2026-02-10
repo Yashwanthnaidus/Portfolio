@@ -1,6 +1,6 @@
 const Marquee = () => {
   const items = ["DEVELOPMENT", "DESIGN", "MARKETING", "NO-CODE DEVELOPMENT", "VISUAL EDITING", "INTERACTION", "MOTION", "STRATEGY", "BRANDING"];
-  const repeated = [...items, ...items];
+  const repeated = [...items, ...items, ...items];
 
   return (
     <section className="py-16 md:py-24 overflow-hidden border-y border-border">
