@@ -1,5 +1,5 @@
 const Marquee = () => {
-  const items = ["DEVELOPMENT", "DESIGN", "INTERACTION", "MOTION", "STRATEGY", "BRANDING"];
+  const items = ["DEVELOPMENT", "DESIGN", "MARKETING", "NO-CODE DEVELOPMENT", "VISUAL EDITING", "INTERACTION", "MOTION", "STRATEGY", "BRANDING"];
   const repeated = [...items, ...items];
 
   return (

@@ -29,7 +29,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-body text-sm md:text-base tracking-[0.3em] uppercase text-muted-foreground mb-6 md:mb-8"
         >
-          Portfolio — 2025
+          Portfolio — 2026
         </motion.p>
 
         <div className="overflow-hidden">
