@@ -23,68 +23,62 @@ const HeroSection = () => {
         style={{ background: "var(--gradient-glow)" }}
       />
 
-      <motion.div style={{ y, opacity, scale }} className="relative z-10 w-full text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-body text-sm md:text-base tracking-[0.3em] uppercase text-muted-foreground mb-6 md:mb-8"
-        >
-          Portfolio — 2026
-        </motion.p>
+      <motion.div style={{ y, opacity, scale }} className="relative z-10 w-full">
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-center gap-6 md:gap-12 lg:gap-16">
+          {/* Left side - Text */}
+          <div className="text-center md:text-left">
+            <div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: 120 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
+                className="font-display text-[14vw] md:text-[8vw] lg:text-[7vw] font-extrabold leading-[0.85] tracking-tighter"
+              >
+                CREATIVE
+              </motion.h1>
+            </div>
 
-        <div className="relative inline-block">
-          {/* Hero portrait image - centered behind text, overlapping both lines */}
+            <div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: 120 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.45 }}
+                className="font-display text-[14vw] md:text-[8vw] lg:text-[7vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
+              >
+                DESIGNER
+              </motion.h1>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="mt-8 md:mt-12"
+            >
+              <p className="text-muted-foreground max-w-xs text-sm md:text-base leading-relaxed">
+                Crafting immersive digital experiences through code, design, and motion.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right side - Portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.85, x: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.9 }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] z-[5] pointer-events-none"
+            className="relative"
           >
             <img
               src={heroPortrait}
               alt="Creative Designer portrait"
-              className="h-[40vh] md:h-[55vh] lg:h-[65vh] w-auto object-contain"
+              className="h-[35vh] md:h-[50vh] lg:h-[60vh] w-auto object-contain"
               style={{
                 filter: "drop-shadow(0 0 60px rgba(0,0,0,0.7))",
                 mixBlendMode: "lighten",
               }}
             />
           </motion.div>
-
-          <div className="overflow-hidden relative z-[1]">
-            <motion.h1
-              initial={{ y: 120 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
-              className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter"
-            >
-              CREATIVE
-            </motion.h1>
-          </div>
-
-          <div className="overflow-hidden relative z-[6]">
-            <motion.h1
-              initial={{ y: 120 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.45 }}
-              className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
-            >
-              DESIGNER
-            </motion.h1>
-          </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="mt-10 md:mt-16 flex justify-center"
-        >
-          <p className="text-muted-foreground max-w-xs text-sm md:text-base leading-relaxed text-center">
-            Crafting immersive digital experiences through code, design, and motion.
-          </p>
-        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
