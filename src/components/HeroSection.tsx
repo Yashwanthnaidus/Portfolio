@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import MagneticButton from "./MagneticButton";
 import { ArrowDown } from "lucide-react";
+import heroPortrait from "@/assets/hero-portrait.png";
 
 const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,26 +33,43 @@ const HeroSection = () => {
           Portfolio — 2026
         </motion.p>
 
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: 120 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
-            className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter"
+        <div className="relative">
+          {/* Hero portrait image - positioned behind text */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 40 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.9 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
           >
-            CREATIVE
-          </motion.h1>
-        </div>
+            <img
+              src={heroPortrait}
+              alt="Creative Designer portrait"
+              className="h-[50vh] md:h-[60vh] lg:h-[70vh] w-auto object-contain mix-blend-lighten brightness-90"
+              style={{ filter: "drop-shadow(0 0 40px rgba(0,0,0,0.5))" }}
+            />
+          </motion.div>
 
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: 120 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.45 }}
-            className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
-          >
-            DESIGNER
-          </motion.h1>
+          <div className="overflow-hidden relative z-10">
+            <motion.h1
+              initial={{ y: 120 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
+              className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter"
+            >
+              CREATIVE
+            </motion.h1>
+          </div>
+
+          <div className="overflow-hidden relative z-10">
+            <motion.h1
+              initial={{ y: 120 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.45 }}
+              className="font-display text-[12vw] md:text-[10vw] lg:text-[9vw] font-extrabold leading-[0.85] tracking-tighter text-stroke"
+            >
+              DESIGNER
+            </motion.h1>
+          </div>
         </div>
 
         <motion.div
