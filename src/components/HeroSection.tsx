@@ -33,23 +33,26 @@ const HeroSection = () => {
           Portfolio — 2026
         </motion.p>
 
-        <div className="relative">
-          {/* Hero portrait image - positioned behind text */}
+        <div className="relative inline-block">
+          {/* Hero portrait image - centered behind text, overlapping both lines */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 40 }}
+            initial={{ opacity: 0, scale: 0.85, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1], delay: 0.9 }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
+            transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.9 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] z-[5] pointer-events-none"
           >
             <img
               src={heroPortrait}
               alt="Creative Designer portrait"
-              className="h-[50vh] md:h-[60vh] lg:h-[70vh] w-auto object-contain mix-blend-lighten brightness-90"
-              style={{ filter: "drop-shadow(0 0 40px rgba(0,0,0,0.5))" }}
+              className="h-[40vh] md:h-[55vh] lg:h-[65vh] w-auto object-contain"
+              style={{
+                filter: "drop-shadow(0 0 60px rgba(0,0,0,0.7))",
+                mixBlendMode: "lighten",
+              }}
             />
           </motion.div>
 
-          <div className="overflow-hidden relative z-10">
+          <div className="overflow-hidden relative z-[1]">
             <motion.h1
               initial={{ y: 120 }}
               animate={{ y: 0 }}
@@ -60,7 +63,7 @@ const HeroSection = () => {
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden relative z-10">
+          <div className="overflow-hidden relative z-[6]">
             <motion.h1
               initial={{ y: 120 }}
               animate={{ y: 0 }}
